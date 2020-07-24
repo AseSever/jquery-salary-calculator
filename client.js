@@ -11,7 +11,6 @@ function readyNow() {
 
     $('#empInfoIn').on('click', submitHandle)
 
-
 }
 
 function submitHandle() {
@@ -28,6 +27,12 @@ function submitHandle() {
     employees.push(employeeInfo);
     console.log(employees);
 
+    $('#fNameIn').val('');
+    $('#lNameIn').val('');
+    $('#idIn').val('');
+    $('#titleIn').val('');
+    $('#anualSalIn').val('');
+    
     appendInfoToDom();
     
 }
@@ -37,7 +42,7 @@ function calculateMonthly( empSalary){
     let monthlyCosts = 0;
 
     for( let salary of employees ) {
-        monthlyCosts += Math.floor(salary.anualSalary) / 12
+        monthlyCosts += Math.floor(salary.anualSalary / 12)
         $('#totalMonthly').empty()
         $('#totalMonthly').append(`
             Total Monthly: ${monthlyCosts}
