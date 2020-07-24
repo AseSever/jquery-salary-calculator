@@ -36,10 +36,17 @@ function calculateMonthly( empSalary){
     console.log('in calculateMonthly');
     let monthlyCosts = 0;
 
-    for( let salary of employees ){
-        monthlyCosts += salary.anualSalary / 12
+    for( let salary of employees ) {
+        monthlyCosts += Math.floor(salary.anualSalary) / 12
+        $('#totalMonthly').empty()
+        $('#totalMonthly').append(`
+            Total Monthly: ${monthlyCosts}
+        `)
     }
-    
+    if(monthlyCosts > 20000 ){
+        console.log('Over budget');
+        $('#totalMonthly').addClass("overBudget" );
+    }
     console.log(monthlyCosts);
     
 }
