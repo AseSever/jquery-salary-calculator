@@ -13,12 +13,17 @@ x  'Submit' button should collect the form information, store the information to
 
 x append information to the DOM 
 
-and clear the input fields. 
+x and clear the input fields. 
 
 x Using the stored information, calculate monthly costs and append this to the to DOM. 
+
 x If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
 
-Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
+x Create a delete button 
+
+x that removes an employee from the DOM. 
+
+For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 
 ### Files Provided
 No files have been provided. Fork and clone this repository or create a new GitHub repository to get started. Make sure to commit regularily!
