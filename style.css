@@ -5,6 +5,7 @@ body {
 }
 
 h1 {
+    background-color: burlywood;
     margin: 10px;
     border: solid black;
     border-radius: 2px;
@@ -13,9 +14,21 @@ h1 {
     color: slategrey;
 }
 
+header {
+    margin-left: 60px;
+}
+
+h3 {
+    margin: 10px;
+}
+
 input {
     margin-bottom: 4px;
     margin-top: 4px;
+}
+
+.btn{
+    margin: 10px;
 }
 
 .table {
@@ -30,11 +43,28 @@ input {
     overflow: hidden;
 }
 
+.salary {
+    
+}
+
+.salaryIn {
+    text-align: right;
+}
+
 .overBudget {
     background-color: red;
+}
 
+.deleteBtn {
+    margin: unset;
 }
 
 #totalMonthly {
     float: right;
+    border: solid black;
+    border-radius: 3px;
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }

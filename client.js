@@ -1,13 +1,11 @@
-console.log('js');
+// console.log('js');
 
 $(document).ready(readyNow)
-
 
 let employees = []
 
 function readyNow() {
     // console.log('JQ Works');
-
 
     $('#empInfoIn').on('click', submitHandle);
     $('.tableEmpInfo').on('click', '.deleteBtn', deleteEmployee);
@@ -15,15 +13,21 @@ function readyNow() {
 
 function deleteEmployee() {
     console.log('delete btn clicked');
+    let removeEmployee = $(this).closest('tr').text();
+    console.log('Employee to delete:', removeEmployee);
+    
     $(this).closest('tr').remove();
-    for (let i = 0; i < employees.length; i++) {
-        console.log(employees[i]);
-        // removing the first index and the selected index...
-        let removedEmployee = employees.splice(i, 1);
-        $(this).removeData(removedEmployee);
-    } // end for
 
-    console.log('new array with employees', employees);
+    // after this line this is where I stumble and can't line up the getter with my employees array
+
+    // for (let i = 0; i < employees.length; i++) {
+    //     console.log(employees[i]);
+    //     if(removeEmployee === ){
+    //        console.log('this is the employee I want to delete', removeEmployee);       
+    //     }
+    // } // end for
+
+    // console.log('new array with employees', employees);
     // adding up the new total
     // let newSalaryTotal = 0
     // for( let newTotal of employees ) {
@@ -34,7 +38,7 @@ function deleteEmployee() {
 } // end deleteEmployee
 
 function submitHandle() {
-    console.log('Submit click');
+    // console.log('Submit click');
 
     let employeeInfo = {
         fName: $('#fNameIn').val(),
@@ -43,9 +47,9 @@ function submitHandle() {
         title: $('#titleIn').val(),
         annualSalary: $('#annualSalIn').val()
     }
-    console.log(employeeInfo);
+    // console.log(employeeInfo);
     employees.push(employeeInfo);
-    console.log(employees);
+    // console.log(employees);
 
     $('#fNameIn').val('');
     $('#lNameIn').val('');
@@ -58,9 +62,9 @@ function submitHandle() {
 }// end submitHandle
 
 function calculateMonthly(empSalary) {
-    console.log('in calculateMonthly');
-    let monthlyCosts = 0;
+    // console.log('in calculateMonthly');
 
+    let monthlyCosts = 0;
     for (let salary of employees) {
         monthlyCosts += salary.annualSalary / 12
         $('#totalMonthly').empty();
@@ -81,7 +85,7 @@ function calculateMonthly(empSalary) {
 
 // append array to the DOM
 function appendInfoToDom() {
-    console.log('Appending DOM');
+    // console.log('Appending DOM');
 
     $('.tableEmpInfo').empty();
 
@@ -92,8 +96,8 @@ function appendInfoToDom() {
                 <td> ${employee.lName} </td>
                 <td> ${employee.id} </td>
                 <td> ${employee.title} </td>
-                <td> $${employee.annualSalary} </td>
-                <td><button class="deleteBtn">Delete</button></td>
+                <td class="salaryIn"> $${employee.annualSalary} </td>
+                <td><button class="deleteBtn btn btn-warning btn-sm">Delete</button></td>
             <tr>    
         `)
     } // end for
