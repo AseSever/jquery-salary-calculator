@@ -17,16 +17,20 @@ function deleteEmployee() {
     console.log('delete btn clicked');
     $(this).closest('tr').remove();
     for (let i = 0; i < employees.length; i++) {
-        console.log(employees);
-        $(this).closest('tr').removeData(employees.splice(i, 1));
+        console.log(employees[i]);
+        // removing the first index and the selected index...
+        let removedEmployee = employees.splice(i, 1);
+        $(this).removeData(removedEmployee);
     } // end for
+
     console.log('new array with employees', employees);
-    let newSalaryTotal = 0
-    for( let newTotal of employees ) {
-        newSalaryTotal += newTotal.annualSalary/12
-        console.log('new monthly total', newSalaryTotal);
-        
-    }
+    // adding up the new total
+    // let newSalaryTotal = 0
+    // for( let newTotal of employees ) {
+    //     newSalaryTotal += newTotal.annualSalary / 12;
+    //     console.log('new monthly total', newSalaryTotal);
+
+    // }
 } // end deleteEmployee
 
 function submitHandle() {
@@ -43,11 +47,11 @@ function submitHandle() {
     employees.push(employeeInfo);
     console.log(employees);
 
-    // $('#fNameIn').val('');
-    // $('#lNameIn').val('');
-    // $('#idIn').val('');
-    // $('#titleIn').val('');
-    // $('#annualSalIn').val('');
+    $('#fNameIn').val('');
+    $('#lNameIn').val('');
+    $('#idIn').val('');
+    $('#titleIn').val('');
+    $('#annualSalIn').val('');
 
     appendInfoToDom();
 

@@ -1,7 +1,40 @@
+body {
+    border: solid black;
+    border-radius: 2px;
+    margin: 1 auto;
+}
 
+h1 {
+    margin: 10px;
+    border: solid black;
+    border-radius: 2px;
+    padding: 20px;
+    text-align: center;
+    color: slategrey;
+}
 
+input {
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.table td {
+    white-space: nowrap;
+    overflow: hidden;
+}
 
 .overBudget {
     background-color: red;
-    
+
+}
+
+#totalMonthly {
+    float: right;
 }
